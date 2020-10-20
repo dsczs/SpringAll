@@ -1,13 +1,12 @@
 package demo.springboot.test.service.impl;
 
-import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import demo.springboot.test.mapper.SeqenceMapper;
 import demo.springboot.test.service.IService;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 
 public abstract class BaseService<T> implements IService<T> {
 
@@ -15,21 +14,22 @@ public abstract class BaseService<T> implements IService<T> {
     protected Mapper<T> mapper;
     @Autowired
     protected SeqenceMapper seqenceMapper;
-    
+
     public Mapper<T> getMapper() {
         return mapper;
     }
+
     @Override
-    public Long getSequence(@Param("seqName") String seqName){
-    	return seqenceMapper.getSequence(seqName);
+    public Long getSequence(@Param("seqName") String seqName) {
+        return seqenceMapper.getSequence(seqName);
     }
-    
+
     @Override
     public List<T> selectAll() {
         //说明：查询所有数据
         return mapper.selectAll();
     }
-    
+
     @Override
     public T selectByKey(Object key) {
         //说明：根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号

@@ -11,13 +11,13 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 public class DemoApplication {
 
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+
     @Bean
     @LoadBalanced
     RestTemplate restTemplate() {
         return new RestTemplate();
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
     }
 }

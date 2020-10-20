@@ -1,7 +1,5 @@
 package cc.mrbird.demo.domain;
 
-import org.springframework.stereotype.Component;
-
 /**
  * @author MrBird
  */

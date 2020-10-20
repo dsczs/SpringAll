@@ -20,19 +20,16 @@ import java.util.stream.Collectors;
 @RestController
 public class TestController {
 
+    private static final String SERVER_ID = "server-provider";
+    private final RestTemplate restTemplate = new RestTemplate();
     private Logger loggr = LoggerFactory.getLogger(this.getClass());
-
     @Autowired
     private DiscoveryClient discoveryClient;
-    @Autowired
-    private LoadBalancerClient loadBalancerClient;
-
-    private final RestTemplate restTemplate = new RestTemplate();
 
     // @Autowired
     // private RestTemplate restTemplate;
-
-    private static final String SERVER_ID = "server-provider";
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
 
     @GetMapping("uri")
     public List<URI> getServerUris() {

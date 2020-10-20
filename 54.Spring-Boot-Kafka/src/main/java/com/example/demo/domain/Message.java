@@ -1,7 +1,6 @@
 package com.example.demo.domain;
 
 import java.io.Serializable;
-import java.time.LocalTime;
 
 /**
  * @author MrBird

@@ -8,8 +8,6 @@ import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.filter.TypeFilter;
 import org.springframework.util.StringUtils;
 
-import java.io.IOException;
-
 /**
  * @author MrBird
  */

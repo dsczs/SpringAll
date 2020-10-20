@@ -65,11 +65,11 @@ public class NestedJobDemo {
     private Job childJobOne() {
         return jobBuilderFactory.get("childJobOne")
                 .start(
-                    stepBuilderFactory.get("childJobOneStep")
-                            .tasklet((stepContribution, chunkContext) -> {
-                                System.out.println("子任务一执行步骤。。。");
-                                return RepeatStatus.FINISHED;
-                            }).build()
+                        stepBuilderFactory.get("childJobOneStep")
+                                .tasklet((stepContribution, chunkContext) -> {
+                                    System.out.println("子任务一执行步骤。。。");
+                                    return RepeatStatus.FINISHED;
+                                }).build()
                 ).build();
     }
 
@@ -77,11 +77,11 @@ public class NestedJobDemo {
     private Job childJobTwo() {
         return jobBuilderFactory.get("childJobTwo")
                 .start(
-                    stepBuilderFactory.get("childJobTwoStep")
-                            .tasklet((stepContribution, chunkContext) -> {
-                                System.out.println("子任务二执行步骤。。。");
-                                return RepeatStatus.FINISHED;
-                            }).build()
+                        stepBuilderFactory.get("childJobTwoStep")
+                                .tasklet((stepContribution, chunkContext) -> {
+                                    System.out.println("子任务二执行步骤。。。");
+                                    return RepeatStatus.FINISHED;
+                                }).build()
                 ).build();
     }
 }
